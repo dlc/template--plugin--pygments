@@ -19,8 +19,8 @@ From a template:
 
 Output:
 
-    <div class="highlight"><pre><span class="x">    &lt;pre&gt;</span>
-    <span class="x">    </span><span class="cp">&lt;?php</span> <span class="nb">phpinfo</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x"></span>
-    <span class="x">    &lt;/pre&gt;</span>
-    <span class="x">    </span>
-    </pre></div> 
+<div class="highlight"><pre><span class="x">    &lt;pre&gt;</span>
+<span class="x">    </span><span class="cp">&lt;?php</span> <span class="nb">phpinfo</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">    &lt;/pre&gt;</span>
+<span class="x">    </span>
+</pre></div> 
