@@ -23,10 +23,10 @@ sub init {
 # [% END %]
 sub filter {
     my ($self, $text, $args, $conf) = @_;
-    my $conf = $self->merge_config($conf);
+    $conf = $self->merge_config($conf);
 
-    my @lexer = $conf->{'lang'} ? ('-l', $conf->{'lexer'}) : ();
-    my $pyg_path = $conf->{'path'} || 'pygments';
+    my @lexer = $conf->{'lang'} ? ('-l', $conf->{'lang'}) : ();
+    my $pyg_path = $conf->{'path'} || 'pygmentize';
 
     # Make 2 file handles
     my ($in_fh, $in_fn) = tempfile('pygXXXXX');
@@ -37,7 +37,8 @@ sub filter {
     close $out_fh;
 
     # Run command line tool
-    system($pyg_path, @lexer, qw(-f html -o), $out_fn, $in_fn);
+    my @cmd = ($pyg_path, @lexer, qw(-f html -o), $out_fn, $in_fn);
+    system(@cmd);
 
     # Read reformatted text
     my $fmt_text = do {
