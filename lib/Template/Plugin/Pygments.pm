@@ -69,3 +69,10 @@ Template::Plugin::Pygments - Colorize a block of text using Pygments
     print "Hello from $^T!";
     [% END %]
 
+=head1 DESCRIPTION
+
+C<Template::Plugin::Pygments> is a Template Toolkit wrapper for Pygments.
+
+=head1 AUTHOR
+
+Darren Chamberlain E<lt>darren@cpan.orgE<gt>
