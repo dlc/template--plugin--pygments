@@ -1,10 +1,13 @@
 package Template::Plugin::Pygments;
 
 use strict;
+use vars qw($VERSION);
 
 use File::Temp qw(tempfile);
 use Template::Plugin::Filter;
 use base qw(Template::Plugin::Filter);
+
+$VERSION = "1.00";
 
 sub init {
     my $self = shift;
@@ -52,3 +55,16 @@ sub filter {
 }
 
 1;
+
+=head1 NAME
+
+Template::Plugin::Pygments - Colorize a block of text using Pygments
+
+=head1 SYNOPSIS
+
+    [% USE pygments %]
+
+    [% FILTER pygments lang="perl" %]
+    print "Hello from $^T!";
+    [% END %]
+
